@@ -1,0 +1,22 @@
+@media(min-width: 768px) {
+  .showcase_section {
+    height: 100vh;
+  }
+}
+
+.instructor_card {
+  box-shadow: rgba(0, 0, 0, 0.00) 0px 5px 15px;
+  transition: 0.3s;
+}
+
+.instructor_card:hover {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 20px;
+}
+
+.features_card {  
+  transition: 1s;
+}
+
+.features_card:hover {
+  transform: translateY(-8px);
+}
