@@ -1,13 +1,16 @@
 import { NextPage } from "next";
 import Head from "next/head";
+// import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import AnimatedTitle from "../components/animated_title/animated_title";
 import FooterSection from "../components/FooterSection/FooterSection";
 import styles from '../styles/SecondPage.module.css';
 
 
 const SecondPage: NextPage = () => {
   return (
-    <div>
+    <>
       {buildHead()}
       
       {buildNavbar()}
@@ -26,17 +29,15 @@ const SecondPage: NextPage = () => {
 
       <FooterSection />
 
-      {/* {buildContactDetailsSection()} */}
-    </div>
+      {/* {buildContactDetailsSection()} */}       
+    </>
   );
 };
 
 
 function buildHead() {
   return (
-    <Head>
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+    <Head>      
       <title>FrontEnd Bootcamp</title>
     </Head>
   );
@@ -55,7 +56,7 @@ function buildNavbar(): React.ReactNode {
         <div className="collapse navbar-collapse" id="navmenu">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a href="#learn" className="nav-link">What you'll Learn</a>
+              <a href="#learn" className="nav-link">What youll Learn</a>
             </li>
 
             <li className="nav-item">
@@ -74,22 +75,26 @@ function buildNavbar(): React.ReactNode {
 
 function buildShowcaseSection(): React.ReactNode {
   return (
-    <section className={`bg-dark text-light py-5 py-md-0 text-center text-sm-start`}>
+    <section id="showcase" className={`bg-dark text-light py-5 py-md-0 text-center text-md-start`}>
       <div className={`container`}>
-        <div className={`${styles.showcase_section} d-sm-flex align-items-center justify-content-between`}>
-          <div>
-            <h2>Get yourself a professional</h2>
-            <h1 className="text-warning">Virtual Assistant</h1>
+        <div className={`${styles.showcase_section} row align-items-center`}>
+          <div className="col-md">
+            <h3>Get yourself a professional</h3>
+            
+            <AnimatedTitle />
 
-            <p className="lead my-4">
-              We focus on teaching our students the fundamentals of the latest and greatest technologies
-              to prepare them for their first dev role
+            <p className="my-3 h5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              <br/>Sit porro sapiente aliquam, nesciunt est suscipit!
             </p>
 
-            <button className="btn btn-primary btn-lg">Start Enrollment </button>
-          </div>        
+            <button className="btn btn-primary btn-lg" onClick={() => alert("Yamin Nather")}>Start Enrollment</button>
+          </div>
           
-            <img className="w-50 d-none d-sm-block" src="/showcase.svg" alt="" />
+          <div className="d-none d-md-inline col">
+            <img src="/showcase.svg" className="img-fluid" />
+            {/* <Image width={0} height={0} layout="responsive" src="/showcase.svg" /> */}
+          </div>
         </div>
       </div>
     </section>
@@ -101,7 +106,7 @@ function buildSubscribeToNewsletterSection(): React.ReactNode {
     <section className="bg-primary text-light p-5">
       <div className="container">
         <div className="d-md-flex justify-content-between align-items-center"></div>
-        <h3 className="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
+        <h3 id="newsletter_label" className="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
       </div>
     </section>
   );
@@ -123,7 +128,7 @@ function buildFeaturesSection(): React.ReactNode {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero laudantium maxime blanditiis id nisi porro.
             </p>
 
-            <a href="/" className="btn btn-primary">Read More</a>            
+            <Link href="/"><a className="btn btn-primary">Read More</a></Link>
           </div>
         </div>
       </div>
@@ -131,7 +136,7 @@ function buildFeaturesSection(): React.ReactNode {
   }
 
   return (
-    <section className="p-5">
+    <section className="py-5">
       <div className="container">
         <div className="row text-center g-4">        
           {buildFeatureItem("Virtual", "laptop", "dark")}        
@@ -147,58 +152,33 @@ function buildFeaturesSection(): React.ReactNode {
 
 function buildLearnSections():React.ReactNode {
   function buildItem(backgroundColor: string, imageURL: string, imagePosition: "left" | "right"): React.ReactNode {
-    const image: React.ReactNode = (
-      <div className="col-md">
-        <img src={imageURL} className="img-fluid" alt="" />
-      </div>
-    );
-
-    var textColor: string = (backgroundColor == "dark") ? "light" : "dark";
-
-    const details: React.ReactNode = (
-      <div className={`col-md p-5 text-${textColor}`}>
-        <h2>Learn the Fundamentals</h2>
-
-        <p className="lead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, ut consequatur! Earum aperiam distinctio tenetur?
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed provident molestias aliquam expedita quis sequi sit 
-          dolor et temporibus voluptatum deleniti facere debitis, voluptatibus rem atque unde nihil est mollitia.
-        </p>
-
-        <a href="#" className="btn btn-light mt-3">
-          <i className="bi bi-chevron-right" /> Read More
-        </a>
-      </div>
-    );
-
-    var rowChildren: React.ReactNode = null;
-    if(imagePosition == "left") {
-      rowChildren = (
-        <>
-          {image}
-          
-          {details}
-        </>
-      );
-    }
-    else {
-      rowChildren = (
-        <>
-          {details}
-
-          {image}
-        </>
-      );
-    }
-
+    var textColor: "light" | "dark" = (backgroundColor == "dark") ? "light" : "dark";
+    
     return (
-      <section className={`bg-${backgroundColor}`}>
+      <section className={`bg-${backgroundColor} py-5`}>
         <div className="container">
-          <div className="row align-items-center justify-content-between">
-            {rowChildren}
+          <div className={`row flex-row${imagePosition == "right" ? "-reverse" : null} align-items-center`}>
+            <div className="col-md">
+              <img src={imageURL} alt="" className="img-fluid" />
+              {/* <Image src={imageURL} width={0} height={0} layout="responsive" alt="" /> */}
+            </div>
+
+            <div className={`col-md mt-5 mt-md-0 col-md text-${textColor}`}>
+              <h2>Learn the Fundamentals</h2>
+
+              <p className="lead">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, ut consequatur! Earum aperiam distinctio tenetur?
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed provident molestias aliquam expedita quis sequi sit 
+                dolor et temporibus voluptatum deleniti facere debitis, voluptatibus rem atque unde nihil est mollitia.
+              </p>
+
+              <a href="#" className={`btn btn-${textColor} text-${backgroundColor} mt-3`}>
+                <i className="bi bi-chevron-right" /> Read More
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -207,7 +187,7 @@ function buildLearnSections():React.ReactNode {
 
   return (
     <section id="learn">
-      {buildItem("", "/fundamentals.svg", "left")}
+      {buildItem("light", "/fundamentals.svg", "left")}
       
       {buildItem("dark", "/react.svg", "right")}
     </section>
@@ -238,7 +218,7 @@ function buildQuestionsSection(): React.ReactNode {
   }
 
   return (
-    <section id="questions" className="p-5">
+    <section id="questions" className="py-5">
       <div className="container">
         <h2 className="text-center mb-4">Frequently Asked Questions</h2>
         
@@ -260,12 +240,15 @@ function buildInstructorsSection(): React.ReactNode {
       <div className="col-md-6 col-lg-3">
         <div className={`card bg-light ${styles.instructor_card}`}>
           <div className="card-body text-center">
-            <img src={imageURL} alt="" className="rounded-circle mb-3" />
+            <img src={imageURL} className="rounded-circle img-fluid" />
+            {/* <Image src={imageURL} width={100} height={100} className="rounded-circle" /> */}
 
             <h3 className="card-title mb-3">{name}</h3>
+            
             <p className="card-text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. A, temporibus corporis odio aperiam veniam officiis?
             </p>
+
             <a href="#"><i className="bi bi-twitter text-dark mx-1"/></a>
             
             <a href="#"><i className="bi bi-facebook text-dark mx-1"/></a>
@@ -282,7 +265,7 @@ function buildInstructorsSection(): React.ReactNode {
   return (
     <section id="instructors" className="p-5 bg-primary">
       <div className="container">
-        <h2 className="text-center text-white">Our Instructors</h2>
+        <h2 className="text-center text-white">Reviews From Our Customers</h2>
         <p className="lead text-center text-white mb-5">
           Our instructors all have 5+ years working as a web developer in the industry
         </p>
@@ -300,75 +283,5 @@ function buildInstructorsSection(): React.ReactNode {
     </section>
   );
 }
-
-function buildContactDetailsSection(): React.ReactNode {
-  function buildItem(children: React.ReactNode): React.ReactNode {
-    return (
-      <div className="col-md-3">
-        <div className="container">
-          {children}
-        </div>            
-      </div>
-    );
-  }
-  
-  return (
-    <section className="bg-dark py-5 text-light">
-      <div className="container">
-        <h1 className="text-center">Contact Info</h1>             
-        <div className="row">          
-          {buildItem(
-            <div>
-              <h3>Menu</h3>
-
-              <ul style={{listStyle: "none", padding: 0}}>
-                <li>About Us</li>
-                
-                <li>My Account</li>
-                
-                <li>Orders History</li>
-                
-                <li>Advanced Search</li>
-              </ul>
-            </div>
-          )}
-
-          {buildItem(
-            <div>
-              <h3>Features</h3>
-
-              <ul style={{listStyle: "none", padding: 0}}>
-                <li>About Us</li>
-                
-                <li>My Account</li>
-                
-                <li>Orders History</li>
-                
-                <li>Advanced Search</li>
-              </ul>
-            </div>
-          )}
-
-          {buildItem(
-            <div>
-              <h3>Contact Us</h3>
-
-              <ul style={{listStyle: "none", padding: 0}}>
-                <li>About Us</li>
-                
-                <li>My Account</li>
-                
-                <li>Orders History</li>
-                
-                <li>Advanced Search</li>
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 
 export default SecondPage;

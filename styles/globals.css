@@ -13,45 +13,74 @@ html, body {
 }
 
 a:link {
-  color: white;
+  color: inherit;
   text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-  color: white;
+  color: inherit;
   text-decoration: none;
 }
 
 /* mouse over link */
-a:hover {
+/* a:hover {
   color: grey;
   text-decoration: none;
-}
+} */
 
 /* selected link */
-a:active {
+/* a:active {
   color: grey;
   text-decoration: none;
+} */
+
+.animated_title {
+  display: inline;
+  position: relative;
+  color: transparent;
+  font-weight: bold;
 }
 
-
-.footer_section .col-md-4 h3 {
-  font-size: 0.7em;
-  font-weight: 900;
-  margin-bottom: 28px;  
+.animated_title::before {
+  content: attr(data-text);
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: yellow;
+  border-right: 4px solid yellow;
+  transition: 2s;
+  overflow: hidden;
+  animation: title_animation 4s linear infinite;
 }
 
-.footer_section .col-md-4 li {
+@keyframes title_animation {
+  0%, 10%, 100% {
+    width: 0%;
+  }
+
+  70%, 90% {
+    width: 102%;
+  }
+}
+
+.footer_section .d-inline-flex li {
   font-size: 0.8em;
+}
+
+.footer_section .d-inline-flex li:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.footer_section .col-md-4 li i {
-  font-size: 1.8em;
-  margin-right: 8px;
+.footer_icons {
+  column-gap: 80px;
 }
-
+/* .footer_icons .bi::before:hover {
+  width: 100%;
+} */
 /* html,
 body {
   padding: 0;
