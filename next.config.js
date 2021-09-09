@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {  
-  assetPrefix: "./",
+  // assetPrefix: "./",
   reactStrictMode: true,
   images: {
     domains: ["randomuser.me"]
