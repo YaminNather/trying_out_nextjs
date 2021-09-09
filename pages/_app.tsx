@@ -32,9 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Component {...pageProps} />
 
-      <Script id="bootstrap" src="bootstrap/dist/js/bootstrap.js" />
-      
-      <Script src="/javascripts/secondpage.js" />
+      <Script id="bootstrap" strategy="beforeInteractive" src="/javascripts/bootstrap.js" onLoad={() => console.log("Loaded")} />
     </>
   );
 }

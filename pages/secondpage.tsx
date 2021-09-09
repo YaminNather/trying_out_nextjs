@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import React from "react";
 import AnimatedTitle from "../components/animated_title/animated_title";
 import FooterSection from "../components/FooterSection/FooterSection";
@@ -10,9 +11,9 @@ import styles from '../styles/SecondPage.module.css';
 
 const SecondPage: NextPage = () => {
   return (
-    <>
-      {buildHead()}
-      
+    <>      
+      {buildHead()}          
+
       {buildNavbar()}
 
       {buildShowcaseSection()}
@@ -29,7 +30,7 @@ const SecondPage: NextPage = () => {
 
       <FooterSection />
 
-      {/* {buildContactDetailsSection()} */}       
+      {/* {buildContactDetailsSection()} */}         
     </>
   );
 };
@@ -88,7 +89,7 @@ function buildShowcaseSection(): React.ReactNode {
               <br/>Sit porro sapiente aliquam, nesciunt est suscipit!
             </p>
 
-            <button className="btn btn-primary btn-lg" onClick={() => alert("Yamin Nather")}>Start Enrollment</button>
+            <button className="btn btn-primary btn-lg">Start Enrollment</button>
           </div>
           
           <div className="d-none d-md-inline col">
