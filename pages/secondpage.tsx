@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import AnimatedTitle from "../components/animated_title/animated_title";
@@ -92,8 +92,8 @@ function buildShowcaseSection(): React.ReactNode {
           </div>
           
           <div className="d-none d-md-inline col">
-            <img src="/showcase.svg" className="img-fluid" />
-            {/* <Image width={0} height={0} layout="responsive" src="/showcase.svg" /> */}
+            {/* <img src="/showcase.svg" className="img-fluid" /> */}
+            <Image width={0} height={0} layout="responsive" src="/showcase.svg" />
           </div>
         </div>
       </div>
@@ -159,8 +159,8 @@ function buildLearnSections():React.ReactNode {
         <div className="container">
           <div className={`row flex-row${imagePosition == "right" ? "-reverse" : null} align-items-center`}>
             <div className="col-md">
-              <img src={imageURL} alt="" className="img-fluid" />
-              {/* <Image src={imageURL} width={0} height={0} layout="responsive" alt="" /> */}
+              {/* <img src={imageURL} alt="" className="img-fluid" /> */}
+              <Image src={imageURL} width={0} height={0} layout="responsive" alt="" />
             </div>
 
             <div className={`col-md mt-5 mt-md-0 col-md text-${textColor}`}>
@@ -240,8 +240,8 @@ function buildInstructorsSection(): React.ReactNode {
       <div className="col-md-6 col-lg-3">
         <div className={`card bg-light ${styles.instructor_card}`}>
           <div className="card-body text-center">
-            <img src={imageURL} className="rounded-circle img-fluid" />
-            {/* <Image src={imageURL} width={100} height={100} className="rounded-circle" /> */}
+            {/* <img src={imageURL} className="rounded-circle img-fluid" /> */}
+            <Image src={imageURL} width={100} height={100} className="rounded-circle" />
 
             <h3 className="card-title mb-3">{name}</h3>
             
