@@ -3,13 +3,14 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AnimatedTitle from "../components/animated_title/animated_title";
+import CustomComponent from "../components/custom_component/custom_component";
 import FooterSection from "../components/FooterSection/FooterSection";
+import SlideInImage from "../components/slide_in_image/slide_in_image";
 import styles from '../styles/SecondPage.module.css';
 
-
-const SecondPage: NextPage = () => {
+const SecondPage: NextPage = () => {  
   return (
     <>      
       {buildHead()}          
@@ -30,7 +31,7 @@ const SecondPage: NextPage = () => {
 
       <FooterSection />
 
-      {/* {buildContactDetailsSection()} */}         
+      {/* {buildContactDetailsSection()} */}
     </>
   );
 };
@@ -89,12 +90,15 @@ function buildShowcaseSection(): React.ReactNode {
               <br/>Sit porro sapiente aliquam, nesciunt est suscipit!
             </p>
 
-            <button className="btn btn-primary btn-lg">Start Enrollment</button>
+            <button id="start_enrollment" className="btn btn-primary btn-lg">
+              Start Enrollment
+            </button>
           </div>
           
           <div className="d-none d-md-inline col">
+            <SlideInImage transform="translateX(100%)" src="/showcase.svg" />
             {/* <img src="/showcase.svg" className="img-fluid" /> */}
-            <Image width={0} height={0} layout="responsive" src="/showcase.svg" />
+            {/* <Image width={0} height={0} layout="responsive" src="/showcase.svg" /> */}
           </div>
         </div>
       </div>
@@ -154,6 +158,7 @@ function buildFeaturesSection(): React.ReactNode {
 function buildLearnSections():React.ReactNode {
   function buildItem(backgroundColor: string, imageURL: string, imagePosition: "left" | "right"): React.ReactNode {
     var textColor: "light" | "dark" = (backgroundColor == "dark") ? "light" : "dark";
+    var transform: string = (imagePosition == "left" ? "-100" : "100");
     
     return (
       <section className={`bg-${backgroundColor} py-5`}>
@@ -161,7 +166,8 @@ function buildLearnSections():React.ReactNode {
           <div className={`row flex-row${imagePosition == "right" ? "-reverse" : null} align-items-center`}>
             <div className="col-md">
               {/* <img src={imageURL} alt="" className="img-fluid" /> */}
-              <Image src={imageURL} width={0} height={0} layout="responsive" alt="" />
+              {/* <Image src={imageURL} width={0} height={0} layout="responsive" alt="" /> */}
+              <SlideInImage src={imageURL} transform={`translateX(${transform}%)`} />
             </div>
 
             <div className={`col-md mt-5 mt-md-0 col-md text-${textColor}`}>

@@ -51,19 +51,17 @@ const LinksArea: React.FC = () => {
         <hr className="mt-2 mb-3" />
 
         <ul className="text-white-50" style={{listStyle: "none", padding: 0}}>
-          <li>
-            <a href="#">
-              Address: 123 Old Hospital Street
-              <br/>Uthamapalayam,
-              <br/>Theni-625533.
-            </a>
+          <li>            
+            Address: 123 Old Hospital Street
+            <br/>Uthamapalayam,
+            <br/>Theni-625533.            
           </li>
           
-          <li><a href="#">Phone:<br/>+91 9820184887</a></li>
+          <li>Phone:<br/>+91 9820184887</li>
           
-          <li><a href="#">Email:<br/>mail@example.com</a></li>
+          <li>Email:<br/>mail@example.com</li>
           
-          <li><a href="#">Working Days/Hours:<br/>Mon-Sun/9.00AM - 8.00PM</a></li>
+          <li>Working Days/Hours:<br/>Mon-Sun/9.00AM - 8.00PM</li>
         </ul>
       </div>          
     </div>
