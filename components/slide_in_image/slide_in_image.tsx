@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { InViewHookResponse, useInView } from 'react-intersection-observer';
 
 interface Props {  
-  src: string;
   transform: string;
   transitionTime?: string;
 }
@@ -11,7 +10,7 @@ interface Props {
 const SlideInImage: React.FC<Props> = (props) => {
   const inViewHookResponse: InViewHookResponse = useInView();
 
-  function calcXOffset(): string {    
+  function calcXOffset(): string {
     return inViewHookResponse.inView ? "translate(0, 0)" : props.transform;
   }
 
@@ -22,7 +21,7 @@ const SlideInImage: React.FC<Props> = (props) => {
   return (
     <div ref={inViewHookResponse.ref}>
       <div style={{position: "relative", transform: calcXOffset(), transition: props.transitionTime}}>
-        <Image width={0} height={0} layout="responsive" src={props.src} />
+        {props.children}
       </div>
     </div>
   );

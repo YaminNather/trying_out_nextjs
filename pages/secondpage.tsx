@@ -1,21 +1,21 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import image from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import React, { useEffect, useState } from "react";
 import AnimatedTitle from "../components/animated_title/animated_title";
-import CustomComponent from "../components/custom_component/custom_component";
 import FooterSection from "../components/FooterSection/FooterSection";
 import SlideInImage from "../components/slide_in_image/slide_in_image";
-import styles from '../styles/SecondPage.module.css';
+import styles from '../styles/secondpage/SecondPage.module.scss';
 
 const SecondPage: NextPage = () => {  
   return (
     <>      
       {buildHead()}          
 
-      {buildNavbar()}
+      {/* {buildNavbar()} */}
 
       {buildShowcaseSection()}
 
@@ -77,9 +77,13 @@ function buildNavbar(): React.ReactNode {
 
 function buildShowcaseSection(): React.ReactNode {
   return (
-    <section id="showcase" className={`bg-dark text-light py-5 py-md-0 text-center text-md-start`}>
-      <div className={`container`}>
-        <div className={`${styles.showcase_section} row align-items-center`}>
+    <section id="showcase" className={`position-relative d-flex flex-column vw-100 justify-content-center text-light ${styles.showcase_section}`}>      
+      <div className={`${styles.background} bg-dark h-100 w-100`}>
+        {/* <Image src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f" layout="fill" /> */}
+      </div>
+
+      <div className={`container position-relative`}>
+        <div className={`row align-items-center`}>
           <div className="col-md">
             <h3>Get yourself a professional</h3>
             
@@ -96,12 +100,14 @@ function buildShowcaseSection(): React.ReactNode {
           </div>
           
           <div className="d-none d-md-inline col">
-            <SlideInImage transform="translateX(100%)" src="/showcase.svg" />
+            <SlideInImage transform="translateX(100%)">
+              <Image width={0} height={0} layout="responsive" src="/showcase.svg" />
+            </SlideInImage>
             {/* <img src="/showcase.svg" className="img-fluid" /> */}
             {/* <Image width={0} height={0} layout="responsive" src="/showcase.svg" /> */}
           </div>
         </div>
-      </div>
+      </div>      
     </section>
   );
 }
@@ -167,7 +173,9 @@ function buildLearnSections():React.ReactNode {
             <div className="col-md">
               {/* <img src={imageURL} alt="" className="img-fluid" /> */}
               {/* <Image src={imageURL} width={0} height={0} layout="responsive" alt="" /> */}
-              <SlideInImage src={imageURL} transform={`translateX(${transform}%)`} />
+              <SlideInImage transform={`translateX(${transform}%)`}>
+                <Image width={0} height={0} layout="responsive" src={imageURL} />
+              </SlideInImage>
             </div>
 
             <div className={`col-md mt-5 mt-md-0 col-md text-${textColor}`}>

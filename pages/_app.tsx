@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/bootstrap/bootstrap.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
 // import "bootstrap/dist/js/bootstrap.js"
 
