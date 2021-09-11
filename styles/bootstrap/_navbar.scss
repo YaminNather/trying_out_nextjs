@@ -80,9 +80,11 @@
   list-style: none;
 
   .nav-link {
+    position: relative;
     padding-right: 0;
     padding-left: 0;
   }
+
 
   .dropdown-menu {
     position: static;

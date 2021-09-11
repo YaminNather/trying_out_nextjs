@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
 import Head from 'next/head';
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet" />
+        {/* <link href="https://fonts.googleapis. com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet" /> */}
       </Head>
 
       <Component {...pageProps} />

@@ -15,11 +15,11 @@ const SecondPage: NextPage = () => {
     <>      
       {buildHead()}          
 
-      {/* {buildNavbar()} */}
+      {buildNavbar()}
 
       {buildShowcaseSection()}
 
-      {buildSubscribeToNewsletterSection()}
+      {/* {buildSubscribeToNewsletterSection()} */}
 
       {buildFeaturesSection()}
 
@@ -47,9 +47,9 @@ function buildHead() {
 
 function buildNavbar(): React.ReactNode {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-      <div className="container">
-        <a href="#" className="navbar-brand">Frontend Bootcamp</a>
+    <nav className="navbar navbar-expand-lg fixed-top bg-light">
+      <div className={`container`}>
+        <a href="#" className="navbar-brand">Cool Virtual Assistant</a>
 
         <button className="navbar-toggler" type="button" data-bs-target="#navmenu" data-bs-toggle="collapse">
           <span className="navbar-toggler-icon"></span>
@@ -58,15 +58,19 @@ function buildNavbar(): React.ReactNode {
         <div className="collapse navbar-collapse" id="navmenu">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a href="#learn" className="nav-link">What youll Learn</a>
+              <a href="#learn" className="nav-link">Services</a>
             </li>
+            
+            <li className="nav-item">
+              <a href="#instructors" className="nav-link">Pricing</a>
+            </li>            
 
             <li className="nav-item">
-              <a href="#questions" className="nav-link">Questions</a>
+              <a href="#questions" className="nav-link">About Us</a>
             </li>
-
+            
             <li className="nav-item">
-              <a href="#instructors" className="nav-link">Instructors</a>
+              <a href="#questions" className="nav-link btn btn-outline-primary text-primary">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -79,34 +83,22 @@ function buildShowcaseSection(): React.ReactNode {
   return (
     <section id="showcase" className={`position-relative d-flex flex-column vw-100 justify-content-center text-light ${styles.showcase_section}`}>      
       <div className={`${styles.background} bg-dark h-100 w-100`}>
-        {/* <Image src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f" layout="fill" /> */}
+        <Image src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f" layout="fill" />
       </div>
 
-      <div className={`container position-relative`}>
-        <div className={`row align-items-center`}>
-          <div className="col-md">
-            <h3>Get yourself a professional</h3>
-            
-            <AnimatedTitle />
+      <div className={`container position-relative text-center details`} style={{transform: "scale(1.5)"}}>
+        <p><span className="h3">Get yourself a</span> <b className="h2 fw-bold">Professional</b></p>
+        
+        <AnimatedTitle />
 
-            <p className="my-3 h5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              <br/>Sit porro sapiente aliquam, nesciunt est suscipit!
-            </p>
+        <p className="my-3 h5">
+          Focus on the work that matters        
+        </p>
 
-            <button id="start_enrollment" className="btn btn-primary btn-lg">
-              Start Enrollment
-            </button>
-          </div>
-          
-          <div className="d-none d-md-inline col">
-            <SlideInImage transform="translateX(100%)">
-              <Image width={0} height={0} layout="responsive" src="/showcase.svg" />
-            </SlideInImage>
-            {/* <img src="/showcase.svg" className="img-fluid" /> */}
-            {/* <Image width={0} height={0} layout="responsive" src="/showcase.svg" /> */}
-          </div>
-        </div>
+        <span>Apply for </span>
+        <button id="start_enrollment" className="btn btn-primary btn-lg">
+          Free Trial
+        </button>
       </div>      
     </section>
   );

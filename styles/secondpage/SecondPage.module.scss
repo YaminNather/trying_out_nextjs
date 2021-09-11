@@ -4,11 +4,16 @@
   @media(min-width: 768px) {
     height: 100vh;
   }
-
+  
   .background {
+    filter: brightness(50%);
     position: absolute;    
     z-index: 0;
-  }   
+  }
+  
+  .details {
+    // font-size: 5.0rem;
+  }
 }
 
 .features_card {
