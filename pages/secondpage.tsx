@@ -92,17 +92,10 @@ function buildNavbar(): React.ReactNode {
             <li className={`${styles.nav_item} px-3`}>
               <a href="#instructors" className="nav-link">PRICING</a>
             </li>
-<<<<<<< Updated upstream
 
             <li className={`${styles.nav_item} px-3`}>
               <a href="#questions" className="nav-link">ABOUT US</a>
             </li>
-=======
-            
-            {/* <li className="nav-item"> */}
-              <a href="#questions" className="nav-link btn btn-outline-primary">Contact Us</a>
-            {/* </li> */}
->>>>>>> Stashed changes
           </ul>
           
           <a href="#questions" className="btn btn-primary ms-auto fw-bold">Contact Us</a>
