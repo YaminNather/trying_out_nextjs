@@ -9,85 +9,15 @@ html, body {
   padding: 0;
   margin: 0;  
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // font-family: 'Roboto', sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 html {
   background-color: white;
 }
 
-a:link {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* mouse over link */
-/* a:hover {
-  color: grey;
-  text-decoration: none;
-} */
-
-/* selected link */
-/* a:active {
-  color: grey;
-  text-decoration: none;
-} */
-
-.navbar-item:before {
-  
-}
-
-.animated_title {
-  display: inline;
-  font-size: 5rem;
-  position: relative;
-  color: transparent;
-  font-weight: bold;
-}
-
-.animated_title::before {
-  content: attr(data-text);
-  white-space: nowrap;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;  
-  color: yellow;
-  border-right: 4px solid yellow;
-  transition: 2s;
-  overflow: hidden;
-  animation: title_animation 3s linear infinite;
-}
-
-@keyframes title_animation {
-  0%, 10%, 100% {
-    width: 0%;
-  }
-
-  70%, 90% {
-    width: 102%;
-  }
-}
-
-.footer_section .d-inline-flex li {
-  font-size: 0.8em;
-}
-
-.footer_section .d-inline-flex li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.footer_icons {
-  column-gap: 80px;
-}
 /* .footer_icons .bi::before:hover {
   width: 100%;
 } */

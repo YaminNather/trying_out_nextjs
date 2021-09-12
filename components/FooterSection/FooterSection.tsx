@@ -1,6 +1,8 @@
+import styles from "./footer_section.module.scss";
+
 const FooterSection = () => {
   return (
-    <section className="footer_section bg-dark py-5 text-light">
+    <section className={`footer_section bg-dark py-5 text-light ${styles.footer_section}`}>
       <div className="container">
         <LinksArea />
 
@@ -14,34 +16,34 @@ const FooterSection = () => {
 
 const LinksArea: React.FC = () => {
   return (
-    <div className="d-flex justify-content-between">
-      <div className="d-inline-flex flex-column text-start w-25">
+    <div className={`d-flex justify-content-between`}>
+      <div className={`d-inline-flex flex-column text-start w-25 ${styles.links}`}>
         <h6 className="m-0">MENU</h6>
 
         <hr className="mt-2 mb-3" />
         
-        <ul className="text-white-50" style={{listStyle: "none", padding: 0}}>
-          <li><a href="#">About Us</a></li>
+        <ul style={{listStyle: "none", padding: 0}}>
+          <li><a href="/aboutus">About Us</a></li>
           
-          <li><a href="#">My Account</a></li>
+          <li><a href="/account">My Account</a></li>
           
-          <li><a href="#">Orders History</a></li>
+          <li><a href="/orders">Orders History</a></li>
           
-          <li><a href="#">Advanced Search</a></li>
+          <li><a href="/advancedsearch">Advanced Search</a></li>
         </ul>
       </div>
 
-      <div className="d-inline-flex flex-column text-start w-25">
+      <div className={`d-inline-flex flex-column text-start w-25 ${styles.links}`}>
         <h6 className="m-0">FEATURES</h6>
 
         <hr className="mt-2 mb-3" />
 
         <ul className="text-white-50" style={{listStyle: "none", padding: 0}}>
-          <li><a href="#">Virtual</a></li>
+          <li><a href="/features#virtual">Virtual</a></li>
           
-          <li><a href="#">Hybrid</a></li>
+          <li><a href="/features#hybrid">Hybrid</a></li>
           
-          <li><a href="#">In person</a></li>                
+          <li><a href="/features#inperson">In person</a></li>                
         </ul>
       </div>
 
@@ -72,7 +74,7 @@ const SocialMediaIconsArea: React.FC = () => {
   return (
     <div className="d-flex flex-column align-items-center mt-5">
       <h3 className="mb-4 text-secondary">Follow us on <b className="text-white">Social Media</b></h3>
-      <div className={`d-flex justify-content-center footer_icons`}>
+      <div className={`d-flex justify-content-center ${styles.social_media_icons}`}>
         <a href="#"><i className="bi bi-facebook h1" /></a>
         
         <a href="#"><i className="bi bi-twitter h1" /></a>

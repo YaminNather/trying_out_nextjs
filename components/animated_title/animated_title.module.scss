@@ -1,0 +1,32 @@
+.animated_title {
+  display: inline;
+  font-size: 5rem;
+  position: relative;
+  color: transparent;
+  font-weight: bold;
+  
+  &::before {
+    content: attr(data-text);
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;  
+    color: yellow;
+    border-right: 4px solid yellow;
+    transition: 2s;
+    overflow: hidden;
+    animation: title_animation 5s linear infinite;
+  }
+
+  @keyframes title_animation {
+    0%, 10%, 100% {
+      width: 0%;
+    }
+  
+    70%, 90% {
+      width: 102%;
+    }
+  }
+}
