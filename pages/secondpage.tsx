@@ -165,7 +165,7 @@ function buildSubscribeToNewsletterSection(): React.ReactNode {
     <section className="text-light p-5" style={{backgroundColor: "#4CA1A3", margin: "5rem 0 5rem 0"}}>
       <div className="container">
         <div className="d-md-flex justify-content-center align-items-center">
-          <h1 id="newsletter_label" className="text-dark mb-3 mb-md-0">"You don&quot;t have to do it <b>all by yourself</b>"</h1>
+          <h1 id="newsletter_label" className="text-dark mb-3 mb-md-0">&ldquo;You don&quot;t have to do it <b>all by yourself</b>&rdquo;</h1>
         </div>
       </div>
     </section>
