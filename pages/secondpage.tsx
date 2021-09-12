@@ -49,7 +49,7 @@ function buildNavbar(): React.ReactNode {
   return (
     <nav className="navbar navbar-expand-lg fixed-top bg-light">
       <div className={`container`}>
-        <a href="#" className="navbar-brand">Cool Virtual Assistant</a>
+        <a href="#" className="navbar-brand link-dark">Cool Virtual Assistant</a>
 
         <button className="navbar-toggler" type="button" data-bs-target="#navmenu" data-bs-toggle="collapse">
           <span className="navbar-toggler-icon"></span>
@@ -58,19 +58,19 @@ function buildNavbar(): React.ReactNode {
         <div className="collapse navbar-collapse" id="navmenu">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a href="#learn" className="nav-link">Services</a>
+              <a href="#learn" className="nav-link link-dark">Services</a>
             </li>
             
             <li className="nav-item">
-              <a href="#instructors" className="nav-link">Pricing</a>
+              <a href="#instructors" className="nav-link link-dark">Pricing</a>
             </li>            
 
             <li className="nav-item">
-              <a href="#questions" className="nav-link">About Us</a>
+              <a href="#questions" className="nav-link link-dark">About Us</a>
             </li>
             
             <li className="nav-item">
-              <a href="#questions" className="nav-link btn btn-outline-primary text-primary">Contact Us</a>
+              <a href="#questions" className="btn btn-outline-primary">Contact Us</a>
             </li>
           </ul>
         </div>
