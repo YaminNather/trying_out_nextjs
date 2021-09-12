@@ -61,7 +61,28 @@
   }
 }
 
-.circle_icon{
-  width: 80px;
-  height: 80px;
+.section {
+  margin-top: 10rem;
+}
+
+.advertisement {
+  box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+
+  .panel {
+    box-shadow: -3px 0px 16px rgba(0, 0, 0, 1.0);    
+    z-index: 1;
+  }
+
+  .icon_container {
+    background-color: rgb(231, 235, 244);
+    width: 80px;
+    height: 80px;
+  }
+  
+  .icon {
+    color: green;
+    font-size: 2rem;
+  }
 }
