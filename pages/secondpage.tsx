@@ -21,13 +21,15 @@ const SecondPage: NextPage = () => {
 
       {/* {buildSubscribeToNewsletterSection()} */}
 
-      {buildFeaturesSection()}
+      {/* {buildFeaturesSection()} */}
 
-      {buildLearnSections()}
+      {/* {buildLearnSections()} */}
 
-      {buildQuestionsSection()}
+      {/* {buildQuestionsSection()} */}
 
-      {buildInstructorsSection()}
+      {/* {buildInstructorsSection()} */}
+
+      {buildAdvertiseSection()}
 
       <FooterSection />
 
@@ -36,6 +38,32 @@ const SecondPage: NextPage = () => {
   );
 };
 
+function buildAdvertiseSection() {
+  return(
+    <section>
+      <div className="row">
+        <div className="col">
+          <Image src="/homepage/satisfied-customer.png" layout="responsive" width="1920px" height="1080px"/>
+
+        </div>
+        <div className="col">
+          <div className="d-flex flex-column">
+            <div className="d-flex align-items-center">
+              <div className= {`${styles.circle_icon} rounded-circle bg-secondary d-flex justify-content-center align-items-center`}>
+                <i className="bi bi-person-check-fill "/>
+              </div>
+
+              <p className="ms-2">
+                Customer–centric sales approach.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+} 
 
 function buildHead() {
   return (
@@ -64,10 +92,17 @@ function buildNavbar(): React.ReactNode {
             <li className={`${styles.nav_item} px-3`}>
               <a href="#instructors" className="nav-link">PRICING</a>
             </li>
+<<<<<<< Updated upstream
 
             <li className={`${styles.nav_item} px-3`}>
               <a href="#questions" className="nav-link">ABOUT US</a>
             </li>
+=======
+            
+            {/* <li className="nav-item"> */}
+              <a href="#questions" className="nav-link btn btn-outline-primary">Contact Us</a>
+            {/* </li> */}
+>>>>>>> Stashed changes
           </ul>
           
           <a href="#questions" className="btn btn-primary ms-auto fw-bold">Contact Us</a>
