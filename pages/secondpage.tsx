@@ -47,32 +47,30 @@ function buildHead() {
 
 function buildNavbar(): React.ReactNode {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top bg-light">
+    <nav className={`${styles.navbar} navbar navbar-expand-lg navbar-light fixed-top bg-light`}>
       <div className={`container`}>
-        <a href="#" className="navbar-brand link-dark">Cool Virtual Assistant</a>
+        <a href="#" className="navbar-brand link-light">Cool Virtual Assistant</a>
 
         <button className="navbar-toggler" type="button" data-bs-target="#navmenu" data-bs-toggle="collapse">
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navmenu">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a href="#learn" className="nav-link link-dark">Services</a>
+          <ul className="navbar-nav mx-auto" style={{fontSize: "0.9em"}}>
+            <li className={`${styles.nav_item} px-3`}>
+              <a href="#learn" className="nav-link fw-normal">SERVICES</a>
             </li>
             
-            <li className="nav-item">
-              <a href="#instructors" className="nav-link link-dark">Pricing</a>
-            </li>            
+            <li className={`${styles.nav_item} px-3`}>
+              <a href="#instructors" className="nav-link">PRICING</a>
+            </li>
 
-            <li className="nav-item">
-              <a href="#questions" className="nav-link link-dark">About Us</a>
-            </li>
-            
-            <li className="nav-item">
-              <a href="#questions" className="btn btn-outline-primary">Contact Us</a>
+            <li className={`${styles.nav_item} px-3`}>
+              <a href="#questions" className="nav-link">ABOUT US</a>
             </li>
           </ul>
+          
+          <a href="#questions" className="btn btn-primary ms-auto fw-bold">Contact Us</a>
         </div>
       </div>
     </nav>
@@ -86,20 +84,21 @@ function buildShowcaseSection(): React.ReactNode {
         <Image src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f" layout="fill" />
       </div>
 
-      <div className={`container position-relative text-center details`} style={{transform: "scale(1.5)"}}>
-        <p><span className="h3">Get yourself a</span> <b className="h2 fw-bold">Professional</b></p>
+      <div className={`container position-relative text-center details`}>
+        <p><span className="">Get yourself a</span>
+        <b className="fw-bold" style={{fontSize: "1.4em"}}> Professional</b></p>
         
         <AnimatedTitle />
 
-        <p className="my-3 h5">
+        <p className="my-3" style={{fontSize: "0.7em"}}>
           Focus on the work that matters        
         </p>
 
-        <span>Apply for </span>
-        <button id="start_enrollment" className="btn btn-primary btn-lg">
+        <span style={{fontSize: "0.5em"}}>Apply for </span>
+        <button id="start_enrollment" className="btn btn-primary btn-lg" >
           Free Trial
         </button>
-      </div>      
+      </div>
     </section>
   );
 }
