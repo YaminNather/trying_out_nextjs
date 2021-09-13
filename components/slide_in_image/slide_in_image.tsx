@@ -10,17 +10,17 @@ interface Props {
 const SlideInImage: React.FC<Props> = (props) => {
   const inViewHookResponse: InViewHookResponse = useInView();
 
-  function calcXOffset(): string {
+  function calcOffset(): string {
     return inViewHookResponse.inView ? "translate(0, 0)" : props.transform;
   }
 
-  console.log(`transform = ${calcXOffset()}, transitionTime = ${props.transitionTime}`);
+  console.log(`transform = ${calcOffset()}, transitionTime = ${props.transitionTime}`);
 
   useEffect(() => console.log(`Rerendered Image. InView status = ${inViewHookResponse.inView}`));
 
   return (
     <div ref={inViewHookResponse.ref}>
-      <div style={{position: "relative", transform: calcXOffset(), transition: props.transitionTime}}>
+      <div style={{position: "relative", transform: calcOffset(), transition: props.transitionTime}}>
         {props.children}
       </div>
     </div>

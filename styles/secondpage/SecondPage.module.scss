@@ -3,22 +3,24 @@
     a {
       position: relative;
       
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        left: 50%;
-        right: 50%;
-        height: 100%;
-        // background-color: red;
-        border-bottom: 2px solid rgba(0, 0, 0, 1.0);
+      @media(min-width: 992px){
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          right: 50%;
+          height: 100%;
+          // background-color: red;
+          border-bottom: 2px solid rgba(0, 0, 0, 1.0);
+          
+          transition: 0.7s;
+        }
         
-        transition: 0.7s;
-      }
-      
-      &:hover::after {
-        left: 0;
-        right: 0;      
+        &:hover::after {
+          left: 0;
+          right: 0;      
+        }
       }
     }
   }
@@ -27,11 +29,15 @@
 .showcase_section {
   margin-top: 56px;
   height: 50vh;
-  font-size: 1rem;
+  font-size: 0.8rem;
   
   @media(min-width: 768px) {
     height: calc(100vh - 56px);
-    font-size: 3rem;    
+    font-size: 1.8rem;
+  }
+
+  @media(min-width: 992px) {
+    font-size: 3rem;
   }
   
   .background {
@@ -66,11 +72,22 @@
 }
 
 .advertisement {
-  box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
+  box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.7);  
   overflow: hidden;
+  border-radius: 8px;    
+  
+  // @media(min-width: 992px) {
+  // }
+
+  .image {
+    flex-basis: 60%;   
+    // flex: 0px 0px;    
+  }
 
   .panel {
+    flex-basis: 40%;
+    flex-grow: 1;
+    background-color: #22577A;
     box-shadow: -3px 0px 16px rgba(0, 0, 0, 1.0);    
     z-index: 1;
   }
