@@ -43,9 +43,9 @@ const SecondPage: NextPage = () => {
 function buildAdvertiseSection(): React.ReactNode {
   function buildItem(iconName: string, heading: string): React.ReactNode {
     return(
-      <div className="mt-3 d-inline-flex justify-content-start align-items-center">
-        <div className= {`${styles.icon_container} rounded-circle d-flex justify-content-center align-items-center`}>
-          <i className={`${styles.icon} bi bi-${iconName}`} />                
+      <div className="mt-5 d-inline-flex align-items-center">
+        <div className= {`flex-shrink-0 d-inline-flex ${styles.icon_container} rounded-circle justify-content-center align-items-center`}>
+          <i className={`${styles.icon} bi bi-${iconName}`} />
         </div>
 
         <span className="ms-3 fs-4">
@@ -58,20 +58,21 @@ function buildAdvertiseSection(): React.ReactNode {
   return(
     <section className={``}>
       <div className={`mx-5 ${styles.advertisement}`}>
-        <div className={`d-flex`}>          
-          <Image src="/homepage/satisfied-customer.png" layout="fixed" width="800" height="600"/>
+        <div className={`d-flex`}>
+          <div className={`d-none d-lg-block ${styles.image}`}>
+            <Image src="/homepage/satisfied-customer.png" layout="responsive" width="600" height="550" objectFit="cover" />
+          </div>
           
-          <div
-            className={`${styles.panel} d-flex flex-column flex-grow-1 justify-content-center text-light px-5`} 
-            style={{backgroundColor: "#22577A"}}
-          >
-            {buildItem("person-check", "Customer-Centric Sales Approach")}
-            
-            {buildItem("award", "Trusted Professionals")}
-            
-            {buildItem("hourglass-split", "Significant Time Savings")}
-            
-            {buildItem("watch", "Always Available")}
+          <div className={`${styles.panel} d-inline-flex px-4 py-5 justify-content-center align-items-center`}>
+            <div className={`d-inline-flex flex-column justify-content-center align-items-start text-light`}>
+              {buildItem("person-check", "Customer-Centric Sales Approach")}
+              
+              {buildItem("award", "Trusted Professionals")}
+              
+              {buildItem("hourglass-split", "Significant Time Savings")}
+              
+              {buildItem("watch", "Always Available")}
+            </div>
           </div>
         </div>
       </div>      
@@ -138,7 +139,7 @@ function buildShowcaseSection(): React.ReactNode {
   return (
     <section id="showcase" className={`position-relative d-flex flex-column vw-100 justify-content-center text-light ${styles.showcase_section}`}>      
       <div className={`${styles.background} bg-dark h-100 w-100`}>
-        <Image src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f" layout="fill" />
+        <Image src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f" layout="fill" width="1920" height="1080" objectFit="cover" />
       </div>
 
       <div className={`container position-relative text-center details`}>
@@ -151,10 +152,14 @@ function buildShowcaseSection(): React.ReactNode {
           Focus on the work that matters        
         </p>
 
-        <span style={{fontSize: "0.5em"}}>Apply for </span>
-        <button id="start_enrollment" className="btn btn-primary btn-lg" >
-          Free Trial
-        </button>
+
+        <div className={`d-inline-flex align-items-center`}>
+          <span style={{fontSize: "0.5em"}}>Apply for</span>
+          
+          <button id="start_enrollment" className="ms-2 btn btn-primary">
+            Free Trial
+          </button>
+        </div>
       </div>
     </section>
   );
@@ -162,12 +167,8 @@ function buildShowcaseSection(): React.ReactNode {
 
 function buildSubscribeToNewsletterSection(): React.ReactNode {
   return (
-    <section className="text-light p-5" style={{backgroundColor: "#4CA1A3", margin: "5rem 0 5rem 0"}}>
-      <div className="container">
-        <div className="d-md-flex justify-content-center align-items-center">
-          <h1 id="newsletter_label" className="text-dark mb-3 mb-md-0">&ldquo;You don&quot;t have to do it <b>all by yourself</b>&rdquo;</h1>
-        </div>
-      </div>
+    <section className="text-light text-center p-5" style={{backgroundColor: "#4CA1A3", margin: "5rem 0 5rem 0"}}>            
+      <span className="h1 text-dark mb-3 mb-md-0">&ldquo;You don&quot;t have to do it <b>all by yourself</b>&rdquo;</span>
     </section>
   );
 }
