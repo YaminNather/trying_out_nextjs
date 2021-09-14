@@ -218,8 +218,6 @@ function buildFeaturesSection(): React.ReactNode {
 }
 
 function buildColorBgSection(backgroundColor: string, imageURL: string, imagePosition: "left" | "right"):React.ReactNode {
-  
-
   var textColor: "light" | "dark" = (backgroundColor == "dark") ? "light" : "dark";
     var transform: string = (imagePosition == "left" ? "-100" : "100");
     var finalBgColor: string = ( backgroundColor == "dark")? "#57CC99": "#FFD523";
