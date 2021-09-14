@@ -14,8 +14,6 @@ const SlideInImage: React.FC<Props> = (props) => {
     return inViewHookResponse.inView ? "translate(0, 0)" : props.transform;
   }
 
-  console.log(`transform = ${calcOffset()}, transitionTime = ${props.transitionTime}`);
-
   useEffect(() => console.log(`Rerendered Image. InView status = ${inViewHookResponse.inView}`));
 
   return (

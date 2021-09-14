@@ -3,19 +3,19 @@ $fontsize: 0.8rem;
 .footer_section {
   font-size: $fontsize;
 
-  .links {
-    li {      
-      &:not(:last-child) {
-        margin-bottom: 10px;        
-      }
+  li {
+    &:not(:last-child) {
+      margin-bottom: 10px;        
+    }
+  }
 
-      a:link {
-        color: rgba(255, 255, 255, 0.5);
-      }
+  .links {    
+    a:link {
+      color: rgba(255, 255, 255, 0.5);
+    }
 
-      a:hover {
-        color: #198754;
-      }
+    a:hover {
+      color: #198754;
     }
   }  
   

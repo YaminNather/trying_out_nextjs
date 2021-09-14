@@ -7,6 +7,9 @@ import Script from "next/script";
 import React, { useEffect, useState } from "react";
 import AnimatedTitle from "../components/animated_title/animated_title";
 import FooterSection from "../components/FooterSection/FooterSection";
+import Advertisement from "../components/home_page/advertisement/advertisement";
+import AdvertisementHeadings from "../components/home_page/advertisement/advertisement_headings/advertisement_headings";
+import AdvertisementImage from "../components/home_page/advertisement/advertisement_image/advertisement_image";
 import SlideInImage from "../components/slide_in_image/slide_in_image";
 import styles from '../styles/secondpage/SecondPage.module.scss';
 
@@ -31,7 +34,7 @@ const SecondPage: NextPage = () => {
 
       {/* {buildInstructorsSection()} */}
 
-      {buildAdvertiseSection()}
+      <Advertisement />
 
       {buildColorBgSection("dark", "/fundamentals.svg", "right")}
 
@@ -41,51 +44,6 @@ const SecondPage: NextPage = () => {
     </>
   );
 };
-
-function buildAdvertiseSection(): React.ReactNode {
-  function buildItem(iconName: string, heading: string, offset: number): React.ReactNode {
-    return(
-      <div 
-        className={` ${styles.floatingtags} p-3 mt-4 d-inline-flex align-items-center`} 
-        // style={{transform: `translateX(${offset*32}px)`}}
-      >
-
-        <div className= {`flex-shrink-0 d-inline-flex ${styles.icon_container} rounded-circle justify-content-center align-items-center`}>
-          <i className={`${styles.icon} bi bi-${iconName}`} />
-        </div>
-
-        <span className="ms-3 fs-5 fw-bold text-dark">
-          {heading}
-        </span>
-      </div>
-    );
-  }
-
-  return(
-    <section className={`mt-5 pb-3`}>
-      <div className={`mx-5 ${styles.advertisement}`}>
-        <div className={`d-flex`}>
-          <div className={`d-none d-lg-block ${styles.image}`}>
-            <Image src="/homepage/satisfied-customer.png" layout="responsive" width="900" height="620" />
-          </div>
-          
-          <div className={` d-inline-flex px-4 py-5 justify-content-center align-items-center`}>
-            <div className={`d-inline-flex ${styles.floatingbox} flex-column justify-content-center align-items-stretch text-light`}>
-              {buildItem("person-check", "Customer-Centric Sales Approach", 0)}
-              
-              {buildItem("award", "Trusted Professionals", 1)}
-              
-              {buildItem("hourglass-split", "Significant Time Savings", 2)}
-              
-              {buildItem("watch", "Always Available", 3)}
-            </div>
-          </div>
-        </div>
-      </div>      
-    </section>
-  );
-
-}
 
 function buildParagraphSection(): React.ReactNode {
   return (
