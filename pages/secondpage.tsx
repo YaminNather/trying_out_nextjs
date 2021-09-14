@@ -176,7 +176,8 @@ function buildFeaturesSection(): React.ReactNode {
 }
 
 function buildColorBgSection(backgroundColor: string, imageURL: string, imagePosition: "left" | "right"):React.ReactNode {
-  var textColor: "light" | "dark" = (backgroundColor == "dark") ? "light" : "dark";
+  // var textColor: "light" | "dark" = (backgroundColor == "dark") ? "light" : "dark";
+  var textColor: "light" | "dark" = "dark";
     var transform: string = (imagePosition == "left" ? "-100" : "100");
     var finalBgColor: string = ( backgroundColor == "dark")? "#57CC99": "#FFD523";
     return (
@@ -203,7 +204,7 @@ function buildColorBgSection(backgroundColor: string, imageURL: string, imagePos
                 dolor et temporibus voluptatum deleniti facere debitis, voluptatibus rem atque unde nihil est mollitia.
               </p>
 
-              <a href="#" className={`btn btn-${textColor} text-${backgroundColor} mt-3`}>
+              <a href="#" className={`btn btn-${textColor} mt-3`}>
                 <i className="bi bi-chevron-right" /> Read More
               </a>
             </div>
