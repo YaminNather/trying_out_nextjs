@@ -26,7 +26,7 @@ const SecondPage: NextPage = () => {
 
       {/* {buildFeaturesSection()} */}
 
-      {buildColorBgSection("light", "/fundamentals.svg", "left")}
+      {buildColorBgSection("light", "/homepage/big_idea.svg", "left")}
 
       {buildParagraphSection()}
 
@@ -36,7 +36,7 @@ const SecondPage: NextPage = () => {
 
       <Advertisement />
 
-      {buildColorBgSection("dark", "/fundamentals.svg", "right")}
+      {buildColorBgSection("dark", "/homepage/big_idea.svg", "right")}
 
       <FooterSection />
 
@@ -180,19 +180,19 @@ function buildColorBgSection(backgroundColor: string, imageURL: string, imagePos
     var transform: string = (imagePosition == "left" ? "-100" : "100");
     var finalBgColor: string = ( backgroundColor == "dark")? "#57CC99": "#FFD523";
     return (
-      <section className={`mt-5 py-5`} style={{backgroundColor: finalBgColor}}>
+      <section className={`mt-5 py-5`}>
         <div className="container">
           <div className={`row flex-row${imagePosition == "right" ? "-reverse" : null} align-items-center`}>
             <div className="col-md">
               {/* <img src={imageURL} alt="" className="img-fluid" /> */}
               {/* <Image src={imageURL} width={0} height={0} layout="responsive" alt="" /> */}
               <SlideInImage transform={`translateX(${transform}%)`}>
-                <Image width={0} height={0} layout="responsive" src={imageURL} />
+                <Image width={900} height={700} layout="responsive" src={imageURL} />
               </SlideInImage>
             </div>
 
             <div className={`col-md mt-5 mt-md-0 col-md text-${textColor}`}>
-              <h2>Learn the Fundamentals</h2>
+              <h2>Heading to be added</h2>
 
               <p className="lead">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, ut consequatur! Earum aperiam distinctio tenetur?
