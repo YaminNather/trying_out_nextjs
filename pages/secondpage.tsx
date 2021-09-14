@@ -23,7 +23,9 @@ const SecondPage: NextPage = () => {
 
       {/* {buildFeaturesSection()} */}
 
-      {/* {buildLearnSections()} */}
+      {buildColorBgSection("light", "/fundamentals.svg", "left")}
+
+      {buildParagraphSection()}
 
       {/* {buildQuestionsSection()} */}
 
@@ -31,7 +33,7 @@ const SecondPage: NextPage = () => {
 
       {buildAdvertiseSection()}
 
-      {buildParagraphSection()}
+      {buildColorBgSection("dark", "/fundamentals.svg", "right")}
 
       <FooterSection />
 
@@ -41,14 +43,18 @@ const SecondPage: NextPage = () => {
 };
 
 function buildAdvertiseSection(): React.ReactNode {
-  function buildItem(iconName: string, heading: string): React.ReactNode {
+  function buildItem(iconName: string, heading: string, offset: number): React.ReactNode {
     return(
-      <div className="mt-5 d-inline-flex align-items-center">
+      <div 
+        className={` ${styles.floatingtags} p-3 mt-4 d-inline-flex align-items-center`} 
+        // style={{transform: `translateX(${offset*32}px)`}}
+      >
+
         <div className= {`flex-shrink-0 d-inline-flex ${styles.icon_container} rounded-circle justify-content-center align-items-center`}>
           <i className={`${styles.icon} bi bi-${iconName}`} />
         </div>
 
-        <span className="ms-3 fs-4">
+        <span className="ms-3 fs-5 fw-bold text-dark">
           {heading}
         </span>
       </div>
@@ -56,22 +62,22 @@ function buildAdvertiseSection(): React.ReactNode {
   }
 
   return(
-    <section className={``}>
+    <section className={`mt-5 pb-3`}>
       <div className={`mx-5 ${styles.advertisement}`}>
         <div className={`d-flex`}>
           <div className={`d-none d-lg-block ${styles.image}`}>
-            <Image src="/homepage/satisfied-customer.png" layout="responsive" width="600" height="550" objectFit="cover" />
+            <Image src="/homepage/satisfied-customer.png" layout="responsive" width="900" height="620" />
           </div>
           
-          <div className={`${styles.panel} d-inline-flex px-4 py-5 justify-content-center align-items-center`}>
-            <div className={`d-inline-flex flex-column justify-content-center align-items-start text-light`}>
-              {buildItem("person-check", "Customer-Centric Sales Approach")}
+          <div className={` d-inline-flex px-4 py-5 justify-content-center align-items-center`}>
+            <div className={`d-inline-flex ${styles.floatingbox} flex-column justify-content-center align-items-stretch text-light`}>
+              {buildItem("person-check", "Customer-Centric Sales Approach", 0)}
               
-              {buildItem("award", "Trusted Professionals")}
+              {buildItem("award", "Trusted Professionals", 1)}
               
-              {buildItem("hourglass-split", "Significant Time Savings")}
+              {buildItem("hourglass-split", "Significant Time Savings", 2)}
               
-              {buildItem("watch", "Always Available")}
+              {buildItem("watch", "Always Available", 3)}
             </div>
           </div>
         </div>
@@ -167,7 +173,7 @@ function buildShowcaseSection(): React.ReactNode {
 
 function buildSubscribeToNewsletterSection(): React.ReactNode {
   return (
-    <section className="text-light text-center p-5" style={{backgroundColor: "#4CA1A3", margin: "5rem 0 5rem 0"}}>            
+    <section className="text-light text-center p-5" style={{backgroundColor: "#4CA1A3", margin: "3rem 0 3rem 0"}}>            
       <span className="h1 text-dark mb-3 mb-md-0">&ldquo;You don&quot;t have to do it <b>all by yourself</b>&rdquo;</span>
     </section>
   );
@@ -211,13 +217,14 @@ function buildFeaturesSection(): React.ReactNode {
   );
 }
 
-function buildLearnSections():React.ReactNode {
-  function buildItem(backgroundColor: string, imageURL: string, imagePosition: "left" | "right"): React.ReactNode {
-    var textColor: "light" | "dark" = (backgroundColor == "dark") ? "light" : "dark";
+function buildColorBgSection(backgroundColor: string, imageURL: string, imagePosition: "left" | "right"):React.ReactNode {
+  
+
+  var textColor: "light" | "dark" = (backgroundColor == "dark") ? "light" : "dark";
     var transform: string = (imagePosition == "left" ? "-100" : "100");
-    
+    var finalBgColor: string = ( backgroundColor == "dark")? "#57CC99": "#FFD523";
     return (
-      <section className={`bg-${backgroundColor} py-5`}>
+      <section className={`mt-5 py-5`} style={{backgroundColor: finalBgColor}}>
         <div className="container">
           <div className={`row flex-row${imagePosition == "right" ? "-reverse" : null} align-items-center`}>
             <div className="col-md">
@@ -248,15 +255,6 @@ function buildLearnSections():React.ReactNode {
         </div>
       </section>
     );
-  }
-
-  return (
-    <section id="learn">
-      {buildItem("light", "/fundamentals.svg", "left")}
-      
-      {buildItem("dark", "/react.svg", "right")}
-    </section>
-  );
 }
 
 function buildQuestionsSection(): React.ReactNode {

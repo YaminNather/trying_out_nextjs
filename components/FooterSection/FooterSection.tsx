@@ -81,7 +81,7 @@ const SocialMediaIconsArea: React.FC = () => {
 
         <a href="#"><i className="bi bi-instagram h1" /></a>
         
-        <a href="#"><i className="bi bi-github h1" /></a>
+        <a href="#"><i className="bi bi-linkedin h1" /></a>
       </div>
     </div>
   );
