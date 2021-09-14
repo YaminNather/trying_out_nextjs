@@ -1,0 +1,9 @@
+.image {
+  position: relative;
+  flex-basis: 60%;
+  // flex: 0px 0px; 
+  border-radius: 8px;    
+  overflow: hidden;   
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+  transition: 1000ms;  
+}

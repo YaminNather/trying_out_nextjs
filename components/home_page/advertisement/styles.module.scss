@@ -1,0 +1,15 @@
+.advertisement {
+  // box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.7);  
+  // overflow: hidden;
+
+  // @media(min-width: 992px) {
+  // }  
+
+  .panel {
+    flex-basis: 40%;
+    flex-grow: 1;
+    background-color: #22577A;
+    box-shadow: -3px 0px 16px rgba(0, 0, 0, 1.0);    
+    z-index: 1;
+  }
+}
